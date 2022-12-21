@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Add passanger</h2>
+<mat-dialog-content class="mat-typography">
+
+    <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input id="input_user_email" matInput placeholder="pat@example.com" [formControl]="email" required [(ngModel)]="usermail">
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button style="background-color: rgb(2, 99, 10);" id="add_user_btn" mat-button [mat-dialog-close]="true" (click)="postPerson()">Add</button>
+      </mat-dialog-actions>
+      
+</mat-dialog-content>
+
+
+
+  

@@ -1,0 +1,99 @@
+
+  <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your email</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>email</mat-label>
+
+          <input matInput placeholder="example@email.com"
+           formControlName="firstCtrl" 
+           [(ngModel)]="userEmailSelected">
+        
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+      
+    </mat-step>
+
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>From</ng-template>
+
+        <app-airport-selector [updateAirportFrom]="true" ></app-airport-selector>
+
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" >
+          <ng-template matStepLabel>To</ng-template>
+
+          <app-airport-selector [updateAirportFrom]="false"></app-airport-selector>
+          
+
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button  (click)="setFlightsFromTo()" mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" >
+          <ng-template matStepLabel>Select flight</ng-template>
+
+          <div>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="flightId">
+                    <th mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let flight"> {{flight.flightId}} </td>
+                  </ng-container>
+                
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="from">
+                    <th mat-header-cell *matHeaderCellDef>From </th>
+                    <td mat-cell *matCellDef="let flight"> {{flight.from.airportName}} </td>
+                  </ng-container>
+                
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="to">
+                    <th mat-header-cell *matHeaderCellDef> To </th>
+                    <td mat-cell *matCellDef="let flight"> {{flight.to.airportName}} </td>
+                  </ng-container>
+                
+                  <!-- Symbol Column -->
+                  <ng-container matColumnDef="freeSeats">
+                    <th mat-header-cell *matHeaderCellDef> Free seats </th>
+                    <td mat-cell *matCellDef="let flight"> {{flight.freeSeats}} </td>
+                  </ng-container>
+                
+                   <!-- Symbol Column -->
+                   <ng-container matColumnDef="book">
+                    <th mat-header-cell *matHeaderCellDef> Book </th>
+                    <td mat-cell *matCellDef="let flight"> 
+                        <button style="background-color: rgb(19, 90, 2);" (click)="bookFlight(flight)" mat-button
+                         >Book</button>    
+                    </td>
+                  </ng-container>
+        
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>   
+        
+            
+            </div>
+
+        </form>
+      </mat-step>
+
+  </mat-stepper>
+  

@@ -1,0 +1,25 @@
+<div class="top_bar">
+  <mat-icon (click)="drawer.toggle()" aria-hidden="false" fontIcon="menu"></mat-icon>
+</div>
+ 
+
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+    
+      <a href="http://localhost:4200/passangers" class="text_in_side_bar">Passangers</a>
+      <a href="http://localhost:4200/flight"   class="text_in_side_bar">Flights</a>
+      <a href="http://localhost:4200/booking"  class="text_in_side_bar">Booking</a>
+      <a href="http://localhost:4200/airport"  class="text_in_side_bar">Airportts</a>
+
+    </mat-drawer>
+    
+    <div class="example-sidenav-content">
+     
+      <router-outlet></router-outlet>
+    </div>
+  
+</mat-drawer-container>
+  
+
+
+

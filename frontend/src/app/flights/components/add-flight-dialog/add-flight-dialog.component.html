@@ -1,0 +1,9 @@
+<mat-dialog-content class="mat-typography">
+    <div class="example-container">
+        <app-airport-selector id="airport_from_input"(value)="setFrom($event)"></app-airport-selector>
+        <app-airport-selector id="airport_to_input"(value)="setTo($event)"></app-airport-selector>
+        <app-number-input (value)="setFreeSeats($event)"></app-number-input>
+    </div>
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button id="btn_save_flight" style="background-color: rgb(2, 99, 10);"  mat-dialog-close mat-button (click)="confirm()" >Confirm</button>
+</mat-dialog-content>

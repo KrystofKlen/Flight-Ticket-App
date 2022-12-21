@@ -1,0 +1,8 @@
+<div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter free seats</mat-label>
+      <input id="free_seats_input" matInput placeholder="free seats" type="number" [formControl]="freeSeats" [(ngModel)]="freeSeatsNum" required (change)="emit()">
+      <mat-error *ngIf="freeSeats.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+  

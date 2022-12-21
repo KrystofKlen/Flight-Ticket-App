@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Add airport</h2>
+<mat-dialog-content class="mat-typography">
+
+<div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="airport" required [(ngModel)]="airportName">
+    </mat-form-field>
+  </div>
+
+  <mat-dialog-actions >
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button style="background-color: rgb(19, 88, 2);" mat-button [mat-dialog-close]="true"(click)="postAirport()" >Add</button>
+
+  </mat-dialog-actions>
+
+</mat-dialog-content >

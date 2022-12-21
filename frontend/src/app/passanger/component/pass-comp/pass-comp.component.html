@@ -1,0 +1,55 @@
+<div>
+  <button id="btn_add_user" mat-button (click)="openDialogPost()" style="margin: 20px;">Add Passanger</button>
+
+<table id="table_passangers" mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <ng-container matColumnDef="personId">
+      <th  mat-header-cell *matHeaderCellDef>ID</th>
+      <td  mat-cell *matCellDef="let pass">{{pass.personId}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>email</th>
+      <td id="person_email" mat-cell *matCellDef="let pass">{{pass.email}}</td>
+    </ng-container>
+
+
+     <!-- Weight Column -->
+     <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let pass">
+        <button mat-button (click)="openDialogPatch(pass)" style="background-color: rgb(117, 117, 4);">Edit</button>
+      </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="bookings">
+      <th mat-header-cell *matHeaderCellDef> Bookings </th>
+      <td mat-cell *matCellDef="let pass">
+        <button mat-button (click)="goToProfile(pass)" style="background-color:rgb(2, 2, 146)">Bookings</button>
+      </td>
+    </ng-container>
+    
+    <!-- Weight Column -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let pass">
+        <button id="btn_delete_person" (click)="deletePerson(pass)" mat-button (click)="goToProfile(pass)" style="background-color: rgb(150, 3, 3);">Delete</button>
+      </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+        id="row_user"
+        mat-row
+        
+        [class.demo-row-is-clicked]="clickedRows.has(row)"
+        *matRowDef="let row; columns: displayedColumns;"
+    ></tr>
+  </table>
+</div>
+  
+
+
+  

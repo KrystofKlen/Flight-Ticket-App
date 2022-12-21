@@ -1,0 +1,53 @@
+<div class="layout">
+
+  <h2 >Bookings of user: {{personId}}</h2>
+
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="bookingId">
+      <th mat-header-cell *matHeaderCellDef> Booking ID </th>
+      <td mat-cell *matCellDef="let booking"> {{booking.bookingId}} </td>
+    </ng-container>
+    
+      <!-- Position Column -->
+    <ng-container matColumnDef="flightId">
+      <th mat-header-cell *matHeaderCellDef> Flight ID </th>
+      <td mat-cell *matCellDef="let booking"> {{booking.flightDto.flightId}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="from">
+      <th mat-header-cell *matHeaderCellDef> From </th>
+      <td mat-cell *matCellDef="let booking"> {{booking.flightDto.from.airportName}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="to">
+      <th mat-header-cell *matHeaderCellDef> To </th>
+      <td mat-cell *matCellDef="let booking"> {{booking.flightDto.to.airportName}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <mat-cell *matCellDef="let row" >
+        <button style="background-color: rgb(109, 4, 4); margin: 20%"
+        mat-button (click)="deleteBooking(row)" >Delete</button>
+      </mat-cell> 
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
+</div>
+    
+    
+    

@@ -1,0 +1,47 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-container {
+    height:100%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    
+  }
+  
+  .example-sidenav {
+    float: left;
+    clear: left;
+    padding: 10px;
+  }
+
+  .example-sidenav a {
+    float: left;
+    clear: left;
+    padding: 20px
+  }
+  
+  .text_in_side_bar {
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    
+  }
+
+  .text_in_side_bar:hover{
+    font-weight: bold;
+  }
+
+  .top_bar{
+    background-color: rgb(28, 29, 28);
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+  }
+  
+  

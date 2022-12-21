@@ -1,0 +1,17 @@
+
+<div>
+    <form class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+        <input id="input_airport"(keydown.enter)="emit()" (click)="emit()" type="text" matInput [formControl]="myControl" [matAutocomplete]="auto"  [(ngModel)]="airportName"  >
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <mat-option (click)="emit()" *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option.airportName}}
+            </mat-option>
+        </mat-autocomplete>
+        </mat-form-field>
+    </form>
+</div>
+
+
+
+  
