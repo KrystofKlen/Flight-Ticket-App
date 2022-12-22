@@ -12,10 +12,8 @@ import com.example.app.repository.BookingRepository;
 import com.example.app.service.AirportService;
 import com.example.app.service.BookingService;
 import com.example.app.service.FlightService;
-import jakarta.persistence.PostRemove;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

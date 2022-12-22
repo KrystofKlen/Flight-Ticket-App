@@ -12,10 +12,10 @@ import com.example.app.service.AirportService;
 import com.example.app.service.BookingService;
 import com.example.app.service.FlightService;
 import com.example.app.service.PersonService;
-import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;

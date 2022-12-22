@@ -7,9 +7,13 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 public interface PersonRepository extends JpaRepository<Person, Long> {
     @Transactional
     @Modifying(clearAutomatically = true)
     @Query(value = "UPDATE person SET email=?2 WHERE person_id=?1", nativeQuery = true)
     void updatePersonEmail(Long personId, String newEmail);
+    @Query(value = "SELECT * FROM person WHERE email = ?1", nativeQuery = true)
+    Optional<Person> findByEmail(String email);
 }

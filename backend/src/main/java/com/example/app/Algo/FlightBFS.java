@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class FlightBFS {
-    private Long from;
-    private Long to;
+    private AirportBFS from;
+    private AirportBFS to;
     private Integer freeSeats;
 }

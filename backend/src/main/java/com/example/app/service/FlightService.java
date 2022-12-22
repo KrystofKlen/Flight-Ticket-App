@@ -6,12 +6,7 @@ import com.example.app.model.Flight;
 import com.example.app.model.Person;
 import com.example.app.repository.FlightRepository;
 import com.example.app.repository.PersonRepository;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +18,6 @@ import java.util.stream.Collectors;
 public class FlightService {
     private FlightRepository flightRepository;
     private final PersonRepository personRepository;
-    private final EntityManagerFactory entityManagerFactory;
 
     public void addFlight(Flight flight){
         flightRepository.save(flight);

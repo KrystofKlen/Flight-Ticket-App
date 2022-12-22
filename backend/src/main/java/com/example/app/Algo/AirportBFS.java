@@ -6,5 +6,6 @@ import lombok.Data;
 @Data
 @Builder
 public class AirportBFS {
+    private String airportName;
     private Long airportId;
 }

@@ -6,9 +6,7 @@ import com.example.app.model.Flight;
 import com.example.app.repository.FlightRepository;
 import com.example.app.repository.PersonRepository;
 import com.example.app.service.FlightService;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.PersistenceUnit;
+
 import net.bytebuddy.asm.Advice;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,20 +43,20 @@ class FlightServiceTest {
     private PersonRepository personRepository;
     @Mock
     private Flight flight;
-    @Autowired
-    private EntityManagerFactory entityManagerFactory;
+    //@Autowired
+    //private EntityManagerFactory entityManagerFactory;
     private FlightService underTest;
 
-    @BeforeEach
-    void setUp() {
-        underTest = new FlightService(flightRepository,personRepository,entityManagerFactory);
-    }
+//    @BeforeEach
+//    void setUp() {
+//        underTest = new FlightService(flightRepository,personRepository,entityManagerFactory);
+//    }
 
     @Autowired
-    @PersistenceUnit(unitName = "mUnit")
+    /*@PersistenceUnit(unitName = "mUnit")
     public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
         this.entityManagerFactory = entityManagerFactory;
-    }
+    }*/
     @Test
     @Disabled
     void deleteFlight() {

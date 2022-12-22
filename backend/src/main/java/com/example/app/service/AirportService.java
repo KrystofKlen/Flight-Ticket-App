@@ -2,12 +2,7 @@ package com.example.app.service;
 
 import com.example.app.model.Airport;
 import com.example.app.repository.AirportRepository;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.TypedQuery;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +14,6 @@ import java.util.Optional;
 public class AirportService {
     private final AirportRepository airportRepository;
     private final FlightService flightService;
-    private final EntityManagerFactory entityManagerFactory;
 
     public void addAirport(Airport airp){
         airportRepository.save(airp);
