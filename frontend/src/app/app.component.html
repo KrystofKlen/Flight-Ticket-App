@@ -1,8 +1,14 @@
 <div class="top_bar">
-  <mat-icon (click)="drawer.toggle()" aria-hidden="false" fontIcon="menu"></mat-icon>
+  <mat-icon (click)="drawer.toggle()" aria-hidden="false" fontIcon="menu">
+  </mat-icon>
+  <div style="text-align: center;margin:auto; ">
+    <h1>Flight Tickets App</h1>
+    <mat-icon>flight_takeoff</mat-icon>
+  </div>
+  
 </div>
  
-
+  
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
     
@@ -19,6 +25,8 @@
     </div>
   
 </mat-drawer-container>
+
+
   
 
 
